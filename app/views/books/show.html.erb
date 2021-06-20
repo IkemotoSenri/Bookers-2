@@ -11,12 +11,16 @@
    <%= render 'users/list', user:@user, book:@booknew %>
   </div>
 
-  <div class="col-md-8 offset-1 mt-4">
-   <h2 class= "Books_detail">Books detail</h2>
+  <div class="col-md-8 offset-md-1">
+   <h2 class= "Books_detail mt-4">Book detail</h2>
    <table class="table">
     <tbody>
-     <th><%= attachment_image_tag @user, :profile_image, size: '40x40', fallback: "no_image.jpg" %></br>
-     <%= link_to @user.name, user_path(@user) %></th>
+     <th><%= link_to user_path(@user) do %>
+      <%= attachment_image_tag @user, :profile_image, size: '40x40', fallback: "no_image.jpg" %></br>
+      <%= link_to @user.name, user_path(@user) %>
+      <% end %>
+     </th>
+
      <td><%=link_to @book.title, book_path(@book) %></td>
      <td><%= @book.body %></td>
       <% if @book.user == current_user %>

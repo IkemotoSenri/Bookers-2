@@ -4,16 +4,21 @@
   <li class="error_message"><%= message %></li>
   <% end %>
 <% end %>
- <div class="mx-auto mt-3" style="width: 500px;">
-   <h2 class= "User_info">User info </h2>
-    <%= form_with model:@user, local:true do |f| %>
-   <div class = "profile_name ">Name</div>
-    <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form-control mt-2 mb-2"%>
-   <div class = "profile_image">Image</div>
-    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class:"mt-2 mb-2" %>
-   <div class = "introduction ">Introduction</div>
-    <%= f.text_field :introduction, class: "form-control mt-2 form-control-lg" %></br>
-    <%= f.submit "Update User", class: "btn btn-secondary" %>
-    <% end %>
+<div class="container mt-4">
+ <div class="row">
+  <div class="col-12">
+   <div class="mx-auto mt-3" style="width: 500px;">
+    <h2 class= "User_info">User info </h2>
+     <%= form_with model:@user, local:true do |f| %>
+    <div class = "profile_name ">Name</div>
+     <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form-control mt-2 mb-2"%>
+    <div class = "profile_image">Image</div>
+     <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class:"mt-2 mb-2" %>
+    <div class = "introduction ">Introduction</div>
+     <%= f.text_field :introduction, class: "form-control mt-2 form-control-lg" %></br>
+     <%= f.submit "Update User", class: "btn btn-secondary" %>
+     <% end %>
+   </div>
+  </div>
  </div>
-
+</div>

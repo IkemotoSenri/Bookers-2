@@ -6,16 +6,22 @@
 <% end %>
 
 <div class="container mt-4">
- <div class="mx-auto mt-3" style="width: 500px;">
- <h1>Editing Book</h1>
-  <%= form_with model:@book, local: true do |f| %>
-  <div class="my-2">Title</div>
-  <%= f.text_field :title, class: "form-control" %>
-  <div class="my-2">Opinion</div>
-  <%= f.text_area :body, class: "form-control" %>
-  <%= f.submit 'Update Book', class: "btn btn-success my-3" %>
-<% end %>
-
-<%= link_to "Show", book_path(@book) %>
-|
-<%= link_to "Back", books_path %>
+ <div class="row">
+  <div class="col-12">
+   <div class="mx-auto mt-3" style="width: 500px;">
+    <h1>Editing Book</h1>
+     <%= form_with model:@book, local: true do |f| %>
+    <div class="my-2">Title</div>
+     <%= f.text_field :title, class: "form-control" %>
+    <div class="my-2">Opinion</div>
+     <%= f.text_area :body, class: "form-control" %>
+     <%= f.submit 'Update Book', class: "btn btn-success my-3" %>
+     <% end %>
+     
+     <%= link_to "Show", book_path(@book) %>
+     |
+     <%= link_to "Back", books_path %>
+   </div>
+  </div>
+ </div>
+</div 
